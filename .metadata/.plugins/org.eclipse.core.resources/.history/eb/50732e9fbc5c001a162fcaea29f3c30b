@@ -49,10 +49,7 @@ public class Main extends PApplet {
 		for (int i = 0; i < this.Users.size(); i++) {
 			User LogUser = this.Users.get(i);
 			println(LogUser.getUsername()+username.getText()+LogUser.getPassword()+password.getText());
-			// Compara entre el username y contraseña digitado con el de todos los usuarios registrados
-			// y si son iguales entra a su sesión.
-			// str.equals(str2) devuelve true si la cadena str es igual a la cadena str2
-			if (LogUser.getUsername().equals(username.getText()) && LogUser.getPassword().equals(password.getText())) {
+			if (LogUser.getUsername() == username.getText() && LogUser.getPassword() == password.getText()) {
 				println("Entré");
 				info = "El usuario existe!";
 				bol = false;
