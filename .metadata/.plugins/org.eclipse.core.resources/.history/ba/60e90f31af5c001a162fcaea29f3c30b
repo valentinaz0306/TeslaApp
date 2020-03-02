@@ -1,0 +1,26 @@
+package main;
+
+import processing.core.PApplet;
+import controlP5.*;
+
+public class Main extends PApplet {
+	private ControlP5 cp5;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PApplet.main("main.Main");;
+	}
+	public void settings() {
+		size(750,1334);
+	}
+	public void setup() {
+		cp5 = new ControlP5(this);
+		cp5.addTextlabel("").setValue(0).setPosition(100,100).setSize(50,100);
+		cp5.addButton("Hola").setValue(0).setPosition(100,600).setSize(400,200);
+	}
+	public void draw() {
+		background(0);
+	}
+
+}
+
+
