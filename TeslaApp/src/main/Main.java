@@ -11,6 +11,7 @@ public class Main extends PApplet {
 	private ControlP5 cp5;
 	//arralist para registar usuarios 
 	private ArrayList<User> Users = new ArrayList<User>();
+	
 	//animacion 
 	int grafi=70;
 	int grafi2=85;
@@ -47,6 +48,39 @@ public class Main extends PApplet {
 	
 	/// Feedback  
 	
+	/// CAR MODELS
+	
+	// MODEL3
+	PImage A3;
+	PImage N3;
+	PImage B3;
+	PImage R3;
+	
+	// MODEL S
+	PImage SA;
+	PImage SR;
+	PImage SN;
+	PImage SB;
+	
+	// MODEL X
+	
+	PImage XA;
+	PImage XN;
+	PImage XB;
+	PImage XR;
+	
+	// MODEL Y
+	
+	PImage YA;
+	PImage YN;
+	PImage YB;
+	PImage YR;
+	
+	/// BENNER FOTOS
+	
+	PImage banner1;
+	PImage banner2;
+	PImage banner3;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -58,6 +92,7 @@ public class Main extends PApplet {
 	}
 	public void setup() {
 		pantalla=0;
+		
 		// imagenes interfaces
 		buy= loadImage("interfaz/buy.png");
 		checkout= loadImage("interfaz/checkout..png");
@@ -72,9 +107,46 @@ public class Main extends PApplet {
 		account= loadImage("interfaz/account.png");
 		login2= loadImage("interfaz/login2.png");
 		
+		// imagenes modelos de carros
+		
+		// MODEL 3
+		A3= loadImage("3A/buy.png");
+		N3= loadImage("3N/buy.png");
+		B3= loadImage("3B/buy.png");
+		R3= loadImage("3R/buy.png");
+		
+		// MODEL S
+		
+		SA= loadImage("SA/buy.png");
+		SN= loadImage("SN/buy.png");
+		SB= loadImage("SB/buy.png");
+		SR= loadImage("SR/buy.png");
+		
+		// MODEL X
+		
+		XA= loadImage("XA/buy.png");
+		XN= loadImage("XN/buy.png");
+		XB= loadImage("XB/buy.png");
+		XR= loadImage("XR/buy.png");
+		
+		// MODEL Y
+		
+		YA= loadImage("YA/buy.png");
+		YN= loadImage("YN/buy.png");
+		YB= loadImage("YB/buy.png");
+		YR= loadImage("YR/buy.png");
+		
+		// imagenes banner 
+		
+		banner1= loadImage("banner1/buy.png");
+		banner2= loadImage("banner2/buy.png");
+		banner2= loadImage("banner2/buy.png");
+		
+		// SE AÑADE UN NUEVO USUARIO AL ARRAYLIST 
 		Users.add(new User("test","test","test@test.com"));
 		PFont font = createFont("arial",20);
 		cp5 = new ControlP5(this);
+		
 		// campo de texto para usuario 
 		username = cp5.addTextfield("username")
 	     .setPosition(85,343)
