@@ -1,0 +1,31 @@
+package main;
+
+public abstract class Vehiculo  {
+
+private String modelo;	
+private float precio;	
+private int unidades;	
+private String color;	
+private String status;	
+
+
+public Vehiculo (String model,float price, String col) {
+	
+	modelo= model;
+	precio= price;
+	color= col;
+	unidades=50;
+	status= "disponible";
+		
+}
+
+
+
+
+
+
+
+
+
+
+}

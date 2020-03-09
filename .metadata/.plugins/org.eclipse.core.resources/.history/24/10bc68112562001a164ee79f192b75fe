@@ -1,0 +1,25 @@
+package main;
+
+public abstract class Vehiculo  {
+
+private int posx;	
+private int posy;	
+private int velx;	
+private int vely;
+private int tamano;	
+private int colorcR;
+private int colorcG;
+private int colorcB;
+
+public Vehiculo (int px,int py,int colR,int colG,int colB) {
+	
+	posx=px;
+	posy=py;
+	colorcR=colR;
+	colorcG=colG;
+	colorcB=colB;
+	velx=4;
+	vely=4;
+	tamano=50;		
+}
+}
