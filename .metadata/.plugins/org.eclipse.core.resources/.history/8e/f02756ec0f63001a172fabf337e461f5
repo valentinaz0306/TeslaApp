@@ -27,7 +27,6 @@ public class Main extends PApplet {
 	int pantalla;
 	int modeloElegido = 0; // modelo elegido por el usuario 0=ninguno 1 model3 2 modelS 3 modelX 4 modelY
 	int CantCarros;
-	ArrayList<String> Compras = new ArrayList<String>(); 
 	
 	Boolean pendiente = false;
 	
@@ -445,11 +444,6 @@ public class Main extends PApplet {
 			
 			background(0);
 			image(history,0,0,375,667);
-			for (int i=0; i<Compras.size();i++) {
-				fill(255);
-				textSize(20);
-				text(Compras.get(i),28,210+i*90);
-			}
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 		
 		break;
@@ -664,22 +658,6 @@ public class Main extends PApplet {
 			
 			fill(255);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
-			
-			break;
-			
-		case 11: 
-			
-			background(0);
-			image(history,0,0,375,667);
-			
-			if (burger) {
-				image(menuh,0,0,246,667);
-				// nombre del usuario
-				fill(255);
-				textSize(20);
-				text(conUser.getUsername(),105,200);
-			}
-			
 			
 			break;
 
@@ -916,25 +894,7 @@ public class Main extends PApplet {
 					showCheckout();
 				}
 			}
-			
-			if(mouseX>= 102 && mouseX<= 284 && mouseY >= 578 && mouseY <= 622 && pantalla==10) {
-				
-				pantalla=11;
-				
-			if(modeloElegido == 1) {
-				Compras.add("Modelo 3, Cantidad: "+CantCarros+"  Valor Total:"+modelo3.getPrecio()*CantCarros);
-			}
-			if(modeloElegido == 2) {
-				Compras.add("Modelo S, Cantidad: "+CantCarros+"  Valor Total:"+modelos.getPrecio()*CantCarros);
-			}
-			if(modeloElegido == 3) {
-				Compras.add("Modelo Y, Cantidad: "+CantCarros+"  Valor Total:"+modeloy.getPrecio()*CantCarros);
-			}
-			if(modeloElegido == 4) {
-				Compras.add("Modelo X, Cantidad: "+CantCarros+"  Valor Total:"+modelox.getPrecio()*CantCarros);
-			}
-			
-			}			
+						
 			
 			
 	}// cierra mousepressed

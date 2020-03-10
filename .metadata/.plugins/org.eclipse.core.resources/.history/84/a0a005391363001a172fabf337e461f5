@@ -666,22 +666,6 @@ public class Main extends PApplet {
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			break;
-			
-		case 11: 
-			
-			background(0);
-			image(history,0,0,375,667);
-			
-			if (burger) {
-				image(menuh,0,0,246,667);
-				// nombre del usuario
-				fill(255);
-				textSize(20);
-				text(conUser.getUsername(),105,200);
-			}
-			
-			
-			break;
 
 			
 		

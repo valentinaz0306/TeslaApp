@@ -669,9 +669,6 @@ public class Main extends PApplet {
 			
 		case 11: 
 			
-			background(0);
-			image(history,0,0,375,667);
-			
 			if (burger) {
 				image(menuh,0,0,246,667);
 				// nombre del usuario
