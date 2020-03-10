@@ -1,25 +1,62 @@
 package main;
 
+import processing.core.PApplet;
+import processing.core.PImage;
+
 public abstract class Vehiculo  {
 
 private String modelo;	
 private float precio;	
 private int unidades;	
 private String color;	
-private String status;	
+private String status;
+private PApplet app;
+private PImage[] images;
 
 
-public Vehiculo (String model,float price, String col) {
+public Vehiculo (String model,float price, String col,PApplet ap,PImage[] images) {
 	
+	app = ap;
 	modelo= model;
 	precio= price;
 	color= col;
 	unidades=50;
 	status= "disponible";
+	this.images = images;
 		
 }
 
 // metodos 
+
+public void pintarCarro(int x, int y) {
+	
+	
+	if(color.equals("black")){
+		
+	app.image(images[0],x,y,400,250);
+		
+	}
+	
+	if(color.equals("red")){
+		
+		app.image(images[1],x,y,400,250);
+			
+		}
+	
+	if(color.equals("blue")){
+		
+		app.image(images[2],x,y,400,250);
+			
+		}
+	
+	if(color.equals("white")){
+		
+		app.image(images[3],x,y,400,250);
+			
+		}
+	
+	
+}
 
 public String getModelo() {
 	return modelo;

@@ -23,6 +23,15 @@ public class Main extends PApplet {
 	Boolean burger = false;
 	User conUser; // Usuario conectado
 	int pantalla;
+	int modeloElegido = 0; // modelo elegido por el usuario 0=ninguno 1 model3 2 modelS 3 modelX 4 modelY
+	
+	
+	Boolean pendiente = false;
+	
+	Model3 modelo3;
+	ModelS modelos;
+	ModelY modeloy;
+	ModelX modelox;
 	
 	// contadore para la animacion 
 	
@@ -82,6 +91,7 @@ public class Main extends PApplet {
 	PImage banner2;
 	PImage banner3;
 	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		PApplet.main("main.Main");;
@@ -91,7 +101,10 @@ public class Main extends PApplet {
 		
 	}
 	public void setup() {
+		
+		
 		pantalla=0;
+		
 		
 		// imagenes interfaces
 		buy= loadImage("interfaz/buy.png");
@@ -142,9 +155,41 @@ public class Main extends PApplet {
 		banner2= loadImage("banner/banner2.png");
 		banner2= loadImage("banner/banner3.png");
 		
+		
+		//ARREGLO DE CARROS
+		PImage[] mo3= new PImage[4];
+		mo3[0]=N3;
+		mo3[1]=R3;
+		mo3[2]=A3;
+		mo3[3]=B3;
+		
+		PImage[] mos= new PImage[4];
+		mos[0]=SN;
+		mos[1]=SR;
+		mos[2]=SA;
+		mos[3]=SB;
+		
+		PImage[] mox= new PImage[4];
+		mox[0]=XN;
+		mox[1]=XR;
+		mox[2]=XA;
+		mox[3]=XB;
+		
+		PImage[] moy= new PImage[4];
+		moy[0]=YN;
+		moy[1]=YR;
+		moy[2]=YA;
+		moy[3]=YB;
+		
+		 modelo3 = new Model3("black",this,mo3);
+		 modelos = new ModelS("black",this,mos);
+		 modelox = new ModelX("black",this,mox);
+		 modeloy = new ModelY("black",this,moy);
+		
+		
 		// SE AÑADE UN NUEVO USUARIO AL ARRAYLIST 
 		Users.add(new User("test","test","test@test.com"));
-		PFont font = createFont("arial",20);
+		PFont font = createFont("PT Sans",20);
 		cp5 = new ControlP5(this);
 		
 		// campo de texto para usuario 
@@ -411,6 +456,36 @@ public class Main extends PApplet {
 			
 		break;
 		
+		case 9:
+			background(0);
+			image(buy,0,0,375,667);
+			fill(0);
+			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			
+			
+			if (modeloElegido == 1) {
+				//pintar imagenes de modelos 
+				
+				modelo3.pintarCarro(0,90);
+			
+			}
+			
+			if (modeloElegido == 2) {
+				
+				modelos.pintarCarro(0,90);
+			}
+			if (modeloElegido == 3) {
+				
+				modeloy.pintarCarro(0,90);
+			}
+				
+			if (modeloElegido == 4) {
+				
+				modelox.pintarCarro(0,90);
+			}
+			
+		break;
+		
 		}// cierre switch
 		
 	}// cierre draw
@@ -482,31 +557,89 @@ public class Main extends PApplet {
 			if(mouseX>= 20 && mouseX<= 180 && mouseY >= 322 && mouseY <= 485 && pantalla==2){
 					
 				pantalla = 5;
+				modeloElegido = 1;
 				
 				}
 	
 			// models
 			
 			if(mouseX>= 190 && mouseX<= 346 && mouseY >= 322 && mouseY <= 485 && pantalla==2){
-								
-			pantalla = 6;			
+									
+				pantalla = 6;
+				modeloElegido = 2;
 				}
 			
-			// models
+			// modelx
 			
 			if(mouseX>= 20 && mouseX<= 180 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
 								
 			pantalla = 7;	
-			
+			modeloElegido = 3;
 				}
 			
 			// models
 			
 			if(mouseX>= 190 && mouseX<= 346 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
 											
-			pantalla = 8;			
+			pantalla = 8;
+			modeloElegido = 4;
 				
 			}
+			
+			// checkout
+			
+			if(mouseX>= 269 && mouseX<= 345 && mouseY >= 624 && mouseY <= 646 &&( pantalla==5 || pantalla==6 || pantalla==7 || pantalla==8))
+			{
+				
+				pantalla = 9;
+					
+				}
+			// col negro
+			
+			if(mouseX>= 88 && mouseX<= 120 && mouseY >= 376 && mouseY <= 416 && pantalla==9){
+				
+				modelo3.setColor("black");
+				modelos.setColor("black");
+				modeloy.setColor("black");
+				modelox.setColor("black");
+					
+				}
+			
+			//col rojo
+			
+			if(mouseX>= 135 && mouseX<= 380 && mouseY >= 379 && mouseY <= 416 && pantalla==9){
+				
+				modelo3.setColor("red");
+				modelos.setColor("red");
+				modeloy.setColor("red");
+				modelox.setColor("red");
+				}
+			
+			//col azul
+			
+			if(mouseX>= 189 && mouseX<= 380 && mouseY >= 218 && mouseY <= 416 && pantalla==9){
+				
+				modelo3.setColor("blue");
+				modelos.setColor("blue");
+				modeloy.setColor("blue");
+				modelox.setColor("blue");
+					
+				}
+			//col blanco
+			
+			if(mouseX>= 236 && mouseX<= 268 && mouseY >= 379 && mouseY <= 416 && pantalla==9){
+				
+				modelo3.setColor("white");
+				modelos.setColor("white");
+				modeloy.setColor("white");
+				modelox.setColor("white");
+				
+					
+				}
+			
+			// cambiar de color
+		
+			
 			
 			
 	}// cierra mousepressed

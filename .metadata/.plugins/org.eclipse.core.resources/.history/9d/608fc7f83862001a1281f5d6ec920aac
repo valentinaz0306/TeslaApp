@@ -1,0 +1,12 @@
+package main;
+
+public class ModelX extends Vehiculo {
+
+//
+	public ModelX ( String col) {
+		
+		super("Modelo X",99960,col);
+		
+		
+	}
+}

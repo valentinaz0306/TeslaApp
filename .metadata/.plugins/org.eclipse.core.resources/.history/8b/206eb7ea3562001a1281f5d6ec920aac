@@ -1,0 +1,12 @@
+package main;
+
+public class ModelY extends Vehiculo {
+
+//
+	public ModelY (float price, String col) {
+		
+		super("Modelo Y",price,col);
+		
+		
+	}
+}

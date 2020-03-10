@@ -1,11 +1,14 @@
 package main;
 
+import processing.core.PApplet;
+import processing.core.PImage;
+
 public class ModelY extends Vehiculo {
 
 //
-	public ModelY (String model,float price, String col) {
+	public ModelY (String col,PApplet app,PImage[] images) {
 		
-		super(model,price,col);
+		super("Modelo Y",56690,col,app,images);
 		
 		
 	}
