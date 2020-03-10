@@ -9,6 +9,7 @@ import processing.core.PImage;
 public class Main extends PApplet {
 	
 	private ControlP5 cp5;
+	
 	//arralist para registar usuarios 
 	private ArrayList<User> Users = new ArrayList<User>();
 	
@@ -33,7 +34,7 @@ public class Main extends PApplet {
 	ModelY modeloy;
 	ModelX modelox;
 	
-	// contadore para la animacion 
+	// contadores para la animacion 
 	
 	int conta1=0;
 	int conta2=0;
@@ -375,6 +376,8 @@ public class Main extends PApplet {
 			if (burger) {
 				image(menuh,0,0,246,667);
 				// nombre del usuario
+				fill(255);
+				textSize(20);
 				text(conUser.getUsername(),105,200);
 			}
 			fill(0);
@@ -424,6 +427,14 @@ public class Main extends PApplet {
 			fill(255);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
+			if (burger) {
+				image(menuh,0,0,246,667);
+				// nombre del usuario
+				fill(255);
+				textSize(20);
+				text(conUser.getUsername(),105,200);
+			}
+			
 		break;
 		
 		// model s
@@ -434,6 +445,14 @@ public class Main extends PApplet {
 			fill(255);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
+			if (burger) {
+				image(menuh,0,0,246,667);
+				// nombre del usuario
+				fill(255);
+				textSize(20);
+				text(conUser.getUsername(),105,200);
+			}
+			
 		break;
 		
 		// model y
@@ -442,7 +461,15 @@ public class Main extends PApplet {
 			background(0);
 			image(modely,0,0,375,667);
 			fill(255);
+			textSize(20);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			
+			if (burger) {
+				image(menuh,0,0,246,667);
+				// nombre del usuario
+				fill(255);
+				text(conUser.getUsername(),105,200);
+			}
 			
 		break;
 		
@@ -452,37 +479,79 @@ public class Main extends PApplet {
 			background(0);
 			image(modelx,0,0,375,667);
 			fill(255);
+			textSize(20);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			
+			if (burger) {
+				image(menuh,0,0,246,667);
+				// nombre del usuario
+				fill(255);
+				text(conUser.getUsername(),105,200);
+			}
 			
 		break;
 		
 		case 9:
+			
+			//pantalla de compra
+			
 			background(0);
 			image(buy,0,0,375,667);
-			fill(0);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			
 			if (modeloElegido == 1) {
+				
 				//pintar imagenes de modelos 
 				
 				modelo3.pintarCarro(0,90);
+				
+				fill(0);
+				textSize(20);
+				text("Model 3",142,350);
 			
 			}
 			
 			if (modeloElegido == 2) {
 				
 				modelos.pintarCarro(0,90);
+				fill(0);
+				textSize(20);
+				text("Model S",142,350);
 			}
 			if (modeloElegido == 3) {
 				
 				modeloy.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
+				fill(0);
+				textSize(20);
+				text("Model Y",142,350);
 			}
 				
 			if (modeloElegido == 4) {
 				
 				modelox.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
+				fill(0);
+				textSize(20);
+				text("Model X",142,350);
 			}
+			
+			if (burger) {
+				image(menuh,0,0,246,667);
+				// nombre del usuario
+				fill(255);
+				textSize(20);
+				text(conUser.getUsername(),105,200);
+			}
+			
+			fill(0);
+			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			
+			
+			
+			
+			
+			
 			
 		break;
 		
@@ -560,6 +629,15 @@ public class Main extends PApplet {
 				modeloElegido = 1;
 				
 				}
+			
+			// burger model 3
+			
+				//abrir menu burger
+				if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==5){
+							
+				burger=!burger;	
+				
+				}
 	
 			// models
 			
@@ -569,6 +647,14 @@ public class Main extends PApplet {
 				modeloElegido = 2;
 				}
 			
+			//abrir menu burger
+			
+			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==6){
+						
+			burger=!burger;	
+			
+			}
+			
 			// modelx
 			
 			if(mouseX>= 20 && mouseX<= 180 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
@@ -577,6 +663,12 @@ public class Main extends PApplet {
 			modeloElegido = 3;
 				}
 			
+			//abrir menu burger
+			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==7){
+						
+			burger=!burger;	
+			
+			}
 			// models
 			
 			if(mouseX>= 190 && mouseX<= 346 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
@@ -586,12 +678,19 @@ public class Main extends PApplet {
 				
 			}
 			
-			// checkout
+			//abrir menu burger
+			
+			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==8){
+						
+			burger=!burger;	
+			
+			}
+			
+			// pantalla buy
 			
 			if(mouseX>= 269 && mouseX<= 345 && mouseY >= 624 && mouseY <= 646 &&( pantalla==5 || pantalla==6 || pantalla==7 || pantalla==8))
 			{
-				
-				pantalla = 9;
+				pantalla = 9; 
 					
 				}
 			// col negro
@@ -637,7 +736,13 @@ public class Main extends PApplet {
 					
 				}
 			
-			// cambiar de color
+			// burger pantalla 9 
+			
+			//abrir menu burger
+			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==9){
+				
+				burger=!burger;	
+			}
 		
 			
 			
