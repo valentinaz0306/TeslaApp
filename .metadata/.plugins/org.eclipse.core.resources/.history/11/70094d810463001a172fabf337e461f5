@@ -523,6 +523,7 @@ public class Main extends PApplet {
 			if (modeloElegido == 3) {
 				
 				modeloy.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model Y",142,350);
@@ -531,6 +532,7 @@ public class Main extends PApplet {
 			if (modeloElegido == 4) {
 				
 				modelox.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model X",142,350);
@@ -550,42 +552,14 @@ public class Main extends PApplet {
 			
 			fill(0);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
-				
+			
+			
+			
+			
+			
+			
+			
 		break;
-		
-		//checkout
-		case 10:
-			
-			background(0);
-			image(checkout,0,0,375,667);
-			
-			if (modeloElegido == 1) {
-				
-				//pintar imagenes de modelos 
-				
-				modelo3.pintarCarro(0,90);
-				
-			}
-			
-			if (modeloElegido == 2) {
-				
-				modelos.pintarCarro(0,90);
-			
-			}
-			if (modeloElegido == 3) {
-				
-				modeloy.pintarCarro(0,90);
-				
-				
-			}
-				
-			if (modeloElegido == 4) {
-				
-				modelox.pintarCarro(0,90);
-				
-			}
-
-			
 		
 		}// cierre switch
 		
@@ -799,7 +773,7 @@ public class Main extends PApplet {
 			
 			if(mouseX>= 90 && mouseX<= 264  && mouseY >= 578 && mouseY <= 626 && pantalla==9){
 													
-					pantalla=10;				
+									
 				}
 			
 			// carrito de compras

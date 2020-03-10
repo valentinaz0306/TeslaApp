@@ -25,7 +25,7 @@ public class Main extends PApplet {
 	User conUser; // Usuario conectado
 	int pantalla;
 	int modeloElegido = 0; // modelo elegido por el usuario 0=ninguno 1 model3 2 modelS 3 modelX 4 modelY
-	int CantCarros;
+	
 	
 	Boolean pendiente = false;
 	
@@ -255,8 +255,6 @@ public class Main extends PApplet {
 		.setValue(0)
 		.setPosition(87,473)
 		.setSize(200,40);
-		
-		CantCarros=1;
 	}
 	public void Hola (int Value){
 		println("help");
@@ -523,6 +521,7 @@ public class Main extends PApplet {
 			if (modeloElegido == 3) {
 				
 				modeloy.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model Y",142,350);
@@ -531,6 +530,7 @@ public class Main extends PApplet {
 			if (modeloElegido == 4) {
 				
 				modelox.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model X",142,350);
@@ -544,48 +544,16 @@ public class Main extends PApplet {
 				text(conUser.getUsername(),105,200);
 			}
 			
-			fill(0);
-			textSize(20);
-			text(CantCarros,170,503);
-			
-			fill(0);
+			fill(255);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
-				
+			
+			
+			
+			
+			
+			
+			
 		break;
-		
-		//checkout
-		case 10:
-			
-			background(0);
-			image(checkout,0,0,375,667);
-			
-			if (modeloElegido == 1) {
-				
-				//pintar imagenes de modelos 
-				
-				modelo3.pintarCarro(0,90);
-				
-			}
-			
-			if (modeloElegido == 2) {
-				
-				modelos.pintarCarro(0,90);
-			
-			}
-			if (modeloElegido == 3) {
-				
-				modeloy.pintarCarro(0,90);
-				
-				
-			}
-				
-			if (modeloElegido == 4) {
-				
-				modelox.pintarCarro(0,90);
-				
-			}
-
-			
 		
 		}// cierre switch
 		
@@ -779,19 +747,14 @@ public class Main extends PApplet {
 			// boton pantalla 9 añadir unidades 
 			
 			if(mouseX>= 238 && mouseX<= 251 && mouseY >= 496 && mouseY <= 504 && pantalla==9){
-					
-				CantCarros++;
+							
 			
 				}
 			
 			// boton pantalla 9 quitar unidades 
 			
-			if(mouseX>= 105 && mouseX<= 118 && mouseY >= 498 && mouseY <= 506 && pantalla==9){
-							
-				if(CantCarros>1) {
-					
-					CantCarros--;
-				}
+			if(mouseX>= 105 && mouseX<= 498 && mouseY >= 118 && mouseY <= 506 && pantalla==9){
+										
 						
 				}
 			
@@ -799,14 +762,7 @@ public class Main extends PApplet {
 			
 			if(mouseX>= 90 && mouseX<= 264  && mouseY >= 578 && mouseY <= 626 && pantalla==9){
 													
-					pantalla=10;				
-				}
-			
-			// carrito de compras
-			
-			if(mouseX>= 333 && mouseX<= 352 && mouseY >= 50 && mouseY <= 70 && (pantalla==2 ||pantalla==5 || pantalla==6 || pantalla==7|| pantalla==8 || pantalla==9)){
-																
-												
+									
 				}
 						
 			

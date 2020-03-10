@@ -523,6 +523,7 @@ public class Main extends PApplet {
 			if (modeloElegido == 3) {
 				
 				modeloy.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model Y",142,350);
@@ -531,6 +532,7 @@ public class Main extends PApplet {
 			if (modeloElegido == 4) {
 				
 				modelox.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model X",142,350);
@@ -565,23 +567,34 @@ public class Main extends PApplet {
 				
 				modelo3.pintarCarro(0,90);
 				
+				fill(0);
+				textSize(20);
+				
+			
 			}
 			
 			if (modeloElegido == 2) {
 				
 				modelos.pintarCarro(0,90);
-			
+				fill(0);
+				textSize(20);
+				
 			}
 			if (modeloElegido == 3) {
 				
 				modeloy.pintarCarro(0,90);
-				
+				modelos.pintarCarro(0,90);
+				fill(0);
+				textSize(20);
 				
 			}
 				
 			if (modeloElegido == 4) {
 				
 				modelox.pintarCarro(0,90);
+				modelos.pintarCarro(0,90);
+				fill(0);
+				textSize(20);
 				
 			}
 
