@@ -269,11 +269,6 @@ public class Main extends PApplet {
 					     .setColor(color(255,255,255))
 					     .hide()
 					     .setLabelVisible(false)
-					     .setColorBackground(0)
-					     .setColorActive(0)
-					     .setColorLabel(0)
-					     .setColorCaptionLabel(0)
-					     .setColorForeground(0)
 					     ;
 				
 		// tarjeta de credito
@@ -285,11 +280,6 @@ public class Main extends PApplet {
 					     .setColor(color(255,255,255))
 					     .hide()
 					     .setLabelVisible(false)
-					     .setColorBackground(0)
-					     .setColorActive(0)
-					     .setColorLabel(0)
-					     .setColorCaptionLabel(0)
-					     .setColorForeground(0)
 					     ;
 		
 		CantCarros=1;

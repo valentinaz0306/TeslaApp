@@ -20,7 +20,6 @@ public class Main extends PApplet {
 	String info = "";
 	Textfield username,password;
 	Textfield usernameR,emailR,passwordR,cPasswordR;
-	Textfield Location,CreditCard;
 	Button loginB,registerB;
 	Boolean burger = false;
 	User conUser; // Usuario conectado
@@ -252,49 +251,14 @@ public class Main extends PApplet {
 			     .setPasswordMode(true)
 			     ;
 		//boton para login 
-		loginB = cp5.addButton("Login")
+		loginB = cp5.addButton("Hola")
 		.setValue(0)
-		.setColorBackground(0xffffffff)
-		.setColorForeground(0xffffffff)
-		.setColorActive(0xffffffff)
-		.setPosition(89,470)
+		.setPosition(87,473)
 		.setSize(200,40);
-		
-		
-		// direccion
-				Location= cp5.addTextfield("location")
-					     .setPosition(113,337)
-					     .setSize(181,34)
-					     .setFont(font)
-					     .setColor(color(255,255,255))
-					     .hide()
-					     .setLabelVisible(false)
-					     .setColorBackground(0)
-					     .setColorActive(0)
-					     .setColorLabel(0)
-					     .setColorCaptionLabel(0)
-					     .setColorForeground(0)
-					     ;
-				
-		// tarjeta de credito
-				
-			CreditCard= cp5.addTextfield("CreditCard")
-					     .setPosition(113,408)
-					     .setSize(181,34)
-					     .setFont(font)
-					     .setColor(color(255,255,255))
-					     .hide()
-					     .setLabelVisible(false)
-					     .setColorBackground(0)
-					     .setColorActive(0)
-					     .setColorLabel(0)
-					     .setColorCaptionLabel(0)
-					     .setColorForeground(0)
-					     ;
 		
 		CantCarros=1;
 	}
-	public void Login (int Value){
+	public void Hola (int Value){
 		println("help");
 		//match de usuario login y registro 
 		Boolean bol = true;
@@ -541,7 +505,7 @@ public class Main extends PApplet {
 				
 				//pintar imagenes de modelos 
 				
-				modelo3.pintarCarro(0,90,400,250);
+				modelo3.pintarCarro(0,90);
 				
 				fill(0);
 				textSize(20);
@@ -551,14 +515,14 @@ public class Main extends PApplet {
 			
 			if (modeloElegido == 2) {
 				
-				modelos.pintarCarro(0,90,400,250);
+				modelos.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model S",142,350);
 			}
 			if (modeloElegido == 3) {
 				
-				modeloy.pintarCarro(0,90,400,250);
+				modeloy.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model Y",142,350);
@@ -566,7 +530,7 @@ public class Main extends PApplet {
 				
 			if (modeloElegido == 4) {
 				
-				modelox.pintarCarro(0,90,400,250);
+				modelox.pintarCarro(0,90);
 				fill(0);
 				textSize(20);
 				text("Model X",142,350);
@@ -599,44 +563,27 @@ public class Main extends PApplet {
 				
 				//pintar imagenes de modelos 
 				
-				modelo3.pintarCarro(95,170,200,125);
-				fill(255);
-				textSize(20);
-				text("$"+ modelo3.getPrecio()*CantCarros,128,532);
+				modelo3.pintarCarro(0,90,400,250);
 				
 			}
 			
 			if (modeloElegido == 2) {
 				
-				modelos.pintarCarro(95,170,200,125);
-				fill(255);
-				textSize(20);
-				text("$"+ modelos.getPrecio()*CantCarros,128,532);
+				modelos.pintarCarro(0,90,400,250);
 			
 			}
 			if (modeloElegido == 3) {
 				
-				modeloy.pintarCarro(95,170,200,125);
-				fill(255);
-				textSize(20);
-				text("$"+ modeloy.getPrecio()*CantCarros,128,532);
+				modeloy.pintarCarro(0,90,400,250);
 				
 				
 			}
 				
 			if (modeloElegido == 4) {
 				
-				modelox.pintarCarro(95,170,200,125);
-				fill(255);
-				textSize(20);
-				text("$"+ modelox.getPrecio()*CantCarros,128,532);
+				modelox.pintarCarro(0,90,400,250);
+				
 			}
-			
-			
-			fill(255);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
-			
-			break;
 
 			
 		

@@ -28,30 +28,30 @@ public Vehiculo (String model,float price, String col,PApplet ap,PImage[] images
 
 // metodos 
 
-public void pintarCarro(int x, int y, int tamx, int tamy) {
+public void pintarCarro(int x, int y) {
 	
 	
 	if(color.equals("black")){
 		
-	app.image(images[0],x,y,tamx,tamy);
+	app.image(images[0],x,y,400,250);
 		
 	}
 	
 	if(color.equals("red")){
 		
-		app.image(images[1],x,y,tamx,tamy);
+		app.image(images[1],x,y,400,250);
 			
 		}
 	
 	if(color.equals("blue")){
 		
-		app.image(images[2],x,y,tamx,tamy);
+		app.image(images[2],x,y,400,250);
 			
 		}
 	
 	if(color.equals("white")){
 		
-		app.image(images[3],x,y,tamx,tamy);
+		app.image(images[3],x,y,400,250);
 			
 		}
 	
