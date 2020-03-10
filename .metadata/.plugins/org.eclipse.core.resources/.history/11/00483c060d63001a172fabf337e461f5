@@ -647,14 +647,6 @@ public class Main extends PApplet {
 				text("$"+ modelox.getPrecio()*CantCarros,128,532);
 			}
 			
-			if (burger) {
-				image(menuh,0,0,246,667);
-				// nombre del usuario
-				fill(255);
-				textSize(20);
-				text(conUser.getUsername(),105,200);
-			}
-			
 			
 			fill(255);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
@@ -699,14 +691,12 @@ public class Main extends PApplet {
 			
 			pantalla = 2;
 			burger=false;
-			CantCarros = 1;
 		}
 		//boton Shopping History
 		if(mouseX>= 0 && mouseX<= 243 && mouseY >= 300 && mouseY <= 370 && burger==true){
 			
 			pantalla = 3;
 			burger=false;
-			CantCarros = 1;
 		}
 		//boton Shopping History back
 		if(mouseX>= 18 && mouseX<= 32 && mouseY >= 55 && mouseY <= 67 && (pantalla==3 || pantalla==4) ){
@@ -723,7 +713,6 @@ public class Main extends PApplet {
 			
 			pantalla = 4;
 			burger=false;
-			CantCarros = 1;
 		}
 		
 		// longout
@@ -732,7 +721,6 @@ public class Main extends PApplet {
 					pantalla = 0;
 					burger=false;
 					showLogin();
-					CantCarros = 1;
 				}
 				
 			// model3

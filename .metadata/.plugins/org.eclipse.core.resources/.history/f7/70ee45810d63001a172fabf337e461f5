@@ -647,14 +647,6 @@ public class Main extends PApplet {
 				text("$"+ modelox.getPrecio()*CantCarros,128,532);
 			}
 			
-			if (burger) {
-				image(menuh,0,0,246,667);
-				// nombre del usuario
-				fill(255);
-				textSize(20);
-				text(conUser.getUsername(),105,200);
-			}
-			
 			
 			fill(255);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);

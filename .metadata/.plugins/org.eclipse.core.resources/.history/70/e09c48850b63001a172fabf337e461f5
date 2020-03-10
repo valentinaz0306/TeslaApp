@@ -364,9 +364,8 @@ public class Main extends PApplet {
 	public void showCheckout() {
 		Location.show();
 		CreditCard.show();
-	
+		
 	}
-	
 	public Boolean Registrarse() {
 		String name=usernameR.getText();
 		String pass=passwordR.getText();
@@ -647,14 +646,6 @@ public class Main extends PApplet {
 				text("$"+ modelox.getPrecio()*CantCarros,128,532);
 			}
 			
-			if (burger) {
-				image(menuh,0,0,246,667);
-				// nombre del usuario
-				fill(255);
-				textSize(20);
-				text(conUser.getUsername(),105,200);
-			}
-			
 			
 			fill(255);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
@@ -682,7 +673,6 @@ public class Main extends PApplet {
 		if(dist(mouseX,mouseY,(float)188,(float)585)<=22 && pantalla==1 && Registrarse()) {
 			 pantalla=2;
 			 hideRegister();
-			 hideCheckout();
 		}
 		//abrir menu burger
 		if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==2){
@@ -699,14 +689,12 @@ public class Main extends PApplet {
 			
 			pantalla = 2;
 			burger=false;
-			CantCarros = 1;
 		}
 		//boton Shopping History
 		if(mouseX>= 0 && mouseX<= 243 && mouseY >= 300 && mouseY <= 370 && burger==true){
 			
 			pantalla = 3;
 			burger=false;
-			CantCarros = 1;
 		}
 		//boton Shopping History back
 		if(mouseX>= 18 && mouseX<= 32 && mouseY >= 55 && mouseY <= 67 && (pantalla==3 || pantalla==4) ){
@@ -723,7 +711,6 @@ public class Main extends PApplet {
 			
 			pantalla = 4;
 			burger=false;
-			CantCarros = 1;
 		}
 		
 		// longout
@@ -732,7 +719,6 @@ public class Main extends PApplet {
 					pantalla = 0;
 					burger=false;
 					showLogin();
-					CantCarros = 1;
 				}
 				
 			// model3
@@ -876,24 +862,19 @@ public class Main extends PApplet {
 						
 				}
 			
-			// boton continuar pantalla 9 a 10
+			// boton continuar pantalla 9
 			
 			if(mouseX>= 90 && mouseX<= 264  && mouseY >= 578 && mouseY <= 626 && pantalla==9){
 													
-					pantalla=10;
-					showCheckout();
+					pantalla=10;				
 				}
 			
-			// burger pantalla 10
-			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==10){
-				
-				burger=!burger;
-				if (burger == true) {
-					hideCheckout();
-				} else {
-					showCheckout();
+			// carrito de compras
+			
+			if(mouseX>= 333 && mouseX<= 352 && mouseY >= 50 && mouseY <= 70 && (pantalla==2 ||pantalla==5 || pantalla==6 || pantalla==7|| pantalla==8 || pantalla==9)){
+																
+												
 				}
-			}
 						
 			
 			
