@@ -434,7 +434,7 @@ public class Main extends PApplet {
 			fill(255);
 			textSize(25);
 			//text("SIGN UP",155,490);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			//text(info,350,500);
 		
 		break;
@@ -450,7 +450,7 @@ public class Main extends PApplet {
 			text("Your E-mail",90,425);
 			text("Your passworrd",90,484);
 			text("Confirm passworrd",90,545);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			//text(info,350,500);
 		
 		break;
@@ -469,7 +469,7 @@ public class Main extends PApplet {
 				text(conUser.getUsername(),105,200);
 			}
 			fill(0);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			//text(info,350,500);
 		
 		break;
@@ -484,7 +484,7 @@ public class Main extends PApplet {
 				textSize(10);
 				text(Compras.get(i),28,210+i*60);
 			}
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 		
 		break;
 		
@@ -492,7 +492,7 @@ public class Main extends PApplet {
 			
 			background(0);
 			image(graphic,0,0,375,667);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			animacion(conta1,385);
 			animacion(conta3,509);
@@ -518,7 +518,7 @@ public class Main extends PApplet {
 			background(0);
 			image(model3,0,0,375,667);
 			fill(255);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			if (burger) {
 				image(menuh,0,0,246,667);
@@ -536,7 +536,7 @@ public class Main extends PApplet {
 			background(0);
 			image(models,0,0,375,667);
 			fill(255);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			if (burger) {
 				image(menuh,0,0,246,667);
@@ -555,7 +555,7 @@ public class Main extends PApplet {
 			image(modely,0,0,375,667);
 			fill(255);
 			textSize(20);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			if (burger) {
 				image(menuh,0,0,246,667);
@@ -573,7 +573,7 @@ public class Main extends PApplet {
 			image(modelx,0,0,375,667);
 			fill(255);
 			textSize(20);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			if (burger) {
 				image(menuh,0,0,246,667);
@@ -640,7 +640,7 @@ public class Main extends PApplet {
 			text(CantCarros,170,503);
 			
 			fill(0);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 				
 		break;
 		
@@ -697,7 +697,7 @@ public class Main extends PApplet {
 			
 			
 			fill(255);
-			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
+			//text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			break;
 

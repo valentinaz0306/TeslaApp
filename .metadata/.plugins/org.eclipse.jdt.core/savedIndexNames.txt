@@ -5,7 +5,6 @@ INDEX VERSION 1.131+/Users/valentinazapata/Desktop/TeslaApp/.metadata/.plugins/o
 469599693.index
 2513065182.index
 1716388916.index
-4012858842.index
 988123527.index
 1963614020.index
 592981196.index

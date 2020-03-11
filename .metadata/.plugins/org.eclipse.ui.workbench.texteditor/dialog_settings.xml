@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="username"/>
+		<item key="selection" value="case 1"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="username"/>
-			<item value="usernameR"/>
-			<item value="control"/>
-			<item value="case 9"/>
+			<item value="case 1"/>
+			<item value="loginB"/>
+			<item value="case 2"/>
+			<item value="pantalla"/>
+			<item value="pantalla = 3"/>
 			<item value="case"/>
-			<item value="text"/>
-			<item value="menu"/>
-			<item value="font"/>
-			<item value="type"/>
-			<item value="pintar"/>
-			<item value="models"/>
-			<item value="mouse"/>
-			<item value="case 4"/>
-			<item value="case n4"/>
-			<item value="animacion"/>
+			<item value="history"/>
+			<item value="case 11"/>
+			<item value="pantalla=10"/>
+			<item value="pantalla =10"/>
+			<item value="case 10"/>
+			<item value="hist"/>
+			<item value="his"/>
+			<item value="checkout"/>
+			<item value="mousep"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="748"/>
-		<item key="DIALOG_Y_ORIGIN" value="480"/>
+		<item key="DIALOG_X_ORIGIN" value="1097"/>
+		<item key="DIALOG_Y_ORIGIN" value="232"/>
 		<item key="DIALOG_WIDTH" value="290"/>
 		<item key="DIALOG_HEIGHT" value="409"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
