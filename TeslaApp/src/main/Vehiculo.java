@@ -33,7 +33,7 @@ public void pintarCarro(int x, int y, int tamx, int tamy) {
 	
 	if(color.equals("black")){
 		
-	app.image(images[0],x,y,tamx,tamy);
+		app.image(images[0],x,y,tamx,tamy);
 		
 	}
 	

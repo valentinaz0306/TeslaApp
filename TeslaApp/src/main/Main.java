@@ -21,7 +21,7 @@ public class Main extends PApplet {
 	Textfield username,password;
 	Textfield usernameR,emailR,passwordR,cPasswordR;
 	Textfield Location,CreditCard;
-	Button loginB,registerB;
+	Button registerB;
 	Boolean burger = false;
 	User conUser; // Usuario conectado
 	int pantalla;
@@ -57,6 +57,8 @@ public class Main extends PApplet {
 	PImage graphic;
 	PImage checkout;
 	PImage login2;
+	PImage empty1;
+	PImage empty2;
 	
 	/// Feedback  
 	
@@ -122,6 +124,8 @@ public class Main extends PApplet {
 		modely= loadImage("interfaz/modely.png");
 		account= loadImage("interfaz/account.png");
 		login2= loadImage("interfaz/login2.png");
+		empty1= loadImage("interfaz/empty1.png");
+		empty2= loadImage("interfaz/empty2.png");
 		
 		// imagenes modelos de carros
 		
@@ -223,43 +227,64 @@ public class Main extends PApplet {
 	     ;
 		// campo de texto para nombre de usuario registro
 		usernameR =cp5.addTextfield("usernameR")
-			     .setPosition(85,310)
-			     .setSize(200,40)
+				.setCaptionLabel("")
+			     .setPosition(85,313)
+			     .setSize(180,38)
 			     .setFont(font)
 			     .setColor(color(255,255,255))
+			     .setColorBackground(0)
+			     .setColorActive(0)
+			     .setColorLabel(255)
+			     .setColorCaptionLabel(255)
+			     .setColorForeground(0)
 			     .hide()
+			     .setLabelVisible(false)
 			     ;
 		emailR = cp5.addTextfield("emailR")
+				.setCaptionLabel("")
 			     .setPosition(85,374)
-			     .setSize(200,40)
+			     .setSize(180,38)
 			     .setFont(font)
 			     .setColor(color(255,255,255))
+			     .setColorBackground(0)
+			     .setColorActive(0)
+			     .setColorLabel(255)
+			     .setColorCaptionLabel(255)
+			     .setColorForeground(0)
 			     .hide()
+			     .setLabelVisible(false)
 			     ;
 		passwordR = cp5.addTextfield("passwordR")
-			     .setPosition(85,431)
-			     .setSize(200,40)
+				.setCaptionLabel("")
+			     .setPosition(85,432)
+			     .setSize(180,38)
 			     .setFont(font)
 			     .setColor(color(255,255,255))
 			     .hide()
+			     .setColorBackground(0)
+			     .setColorActive(0)
+			     .setColorLabel(255)
+			     .setColorCaptionLabel(255)
+			     .setColorForeground(0)
 			     .setPasswordMode(true)
+			     .setLabelVisible(false)
 			     ;
 		cPasswordR = cp5.addTextfield("cPasswordR")
+				.setCaptionLabel("")
 			     .setPosition(85,492)
-			     .setSize(200,40)
+			     .setSize(180,38)
 			     .setFont(font)
 			     .setColor(color(255,255,255))
+			     .setColorBackground(0)
+			     .setColorActive(0)
+			     .setColorLabel(255)
+			     .setColorCaptionLabel(255)
+			     .setColorForeground(0)
 			     .hide()
 			     .setPasswordMode(true)
+			     .setLabelVisible(false)
 			     ;
 		//boton para login 
-		loginB = cp5.addButton("Login")
-		.setValue(0)
-		.setColorBackground(0xffffffff)
-		.setColorForeground(0xffffffff)
-		.setColorActive(0xffffffff)
-		.setPosition(89,470)
-		.setSize(200,40);
 		
 		
 		// direccion
@@ -295,7 +320,7 @@ public class Main extends PApplet {
 		
 		CantCarros=1;
 	}
-	public void Login (int Value){
+	public void Login (){
 		println("help");
 		//match de usuario login y registro 
 		Boolean bol = true;
@@ -329,12 +354,10 @@ public class Main extends PApplet {
 		password.hide();
 		password.clear();
 		username.clear();
-		loginB.hide();
 	}
 	public void showLogin() {
 		username.show();
 		password.show();
-		loginB.show();
 		
 	}
 	public void hideRegister() {
@@ -358,7 +381,9 @@ public class Main extends PApplet {
 	
 	public void hideCheckout() {
 		Location.hide();
+		Location.clear();
 		CreditCard.hide();
+		CreditCard.clear();
 		
 	}
 	
@@ -406,6 +431,9 @@ public class Main extends PApplet {
 			
 			background(0);
 			image(login2,0,0,375,667);
+			fill(255);
+			textSize(25);
+			//text("SIGN UP",155,490);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			//text(info,350,500);
 		
@@ -416,6 +444,12 @@ public class Main extends PApplet {
 			
 			background(0);
 			image(account,0,0,375,667);
+			fill(255);
+			textSize(12);
+			text("Your nickname",90,365);
+			text("Your E-mail",90,425);
+			text("Your passworrd",90,484);
+			text("Confirm passworrd",90,545);
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			//text(info,350,500);
 		
@@ -447,8 +481,8 @@ public class Main extends PApplet {
 			image(history,0,0,375,667);
 			for (int i=0; i<Compras.size();i++) {
 				fill(255);
-				textSize(20);
-				text(Compras.get(i),28,210+i*90);
+				textSize(10);
+				text(Compras.get(i),28,210+i*60);
 			}
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 		
@@ -666,22 +700,6 @@ public class Main extends PApplet {
 			text("x:"+mouseX+" y:"+mouseY,mouseX,mouseY);
 			
 			break;
-			
-		case 11: 
-			
-			background(0);
-			image(history,0,0,375,667);
-			
-			if (burger) {
-				image(menuh,0,0,246,667);
-				// nombre del usuario
-				fill(255);
-				textSize(20);
-				text(conUser.getUsername(),105,200);
-			}
-			
-			
-			break;
 
 			
 		
@@ -692,7 +710,11 @@ public class Main extends PApplet {
 	public void mousePressed() {
 		
 		//pasar a crear cuenta
-		if(mouseX>= 145 && mouseX<= 232 && mouseY >= 638 && mouseY <= 647 && pantalla==0){
+		if(mouseX>= 88 && mouseX<= 300 && mouseY >= 469 && mouseY <= 511 && pantalla==0){
+			
+			Login();
+			}
+		else if(mouseX>= 145 && mouseX<= 232 && mouseY >= 638 && mouseY <= 647 && pantalla==0){
 			
 			pantalla=1;
 			hideLogin();
@@ -701,37 +723,37 @@ public class Main extends PApplet {
 		
 		//ingresar al home
 		
-		if(dist(mouseX,mouseY,(float)188,(float)585)<=22 && pantalla==1 && Registrarse()) {
+		else if(dist(mouseX,mouseY,(float)188,(float)585)<=22 && pantalla==1 && Registrarse()) {
 			 pantalla=2;
 			 hideRegister();
 			 hideCheckout();
 		}
 		//abrir menu burger
-		if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==2){
+		else if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==2){
 			
 			burger=!burger;	
 		}
 		//esconder menu burger
-		if(mouseX>= 244 && mouseX<= 375 && mouseY >= 43 && mouseY <= 667 && burger==true){
+		else if(mouseX>= 244 && mouseX<= 375 && mouseY >= 43 && mouseY <= 667 && burger==true){
 				
 			burger=false;
 		}
 		//boton Home
-		if(mouseX>= 0 && mouseX<= 243 && mouseY >= 230 && mouseY <= 300 && burger==true){
+		else if(mouseX>= 0 && mouseX<= 243 && mouseY >= 230 && mouseY <= 300 && burger==true){
 			
 			pantalla = 2;
 			burger=false;
 			CantCarros = 1;
 		}
 		//boton Shopping History
-		if(mouseX>= 0 && mouseX<= 243 && mouseY >= 300 && mouseY <= 370 && burger==true){
+		else if(mouseX>= 0 && mouseX<= 243 && mouseY >= 300 && mouseY <= 370 && burger==true){
 			
 			pantalla = 3;
 			burger=false;
 			CantCarros = 1;
 		}
 		//boton Shopping History back
-		if(mouseX>= 18 && mouseX<= 32 && mouseY >= 55 && mouseY <= 67 && (pantalla==3 || pantalla==4) ){
+		else if(mouseX>= 18 && mouseX<= 32 && mouseY >= 55 && mouseY <= 67 && (pantalla==3 || pantalla==4) ){
 					
 			pantalla = 2;
 			// volver los contadores a cero 
@@ -741,7 +763,7 @@ public class Main extends PApplet {
 		}
 		
 		// ir a la pantalla de los graficos 
-		if(mouseX>= 0 && mouseX<= 243 && mouseY >= 371 && mouseY <= 440 && burger==true){
+		else if(mouseX>= 0 && mouseX<= 243 && mouseY >= 371 && mouseY <= 440 && burger==true){
 			
 			pantalla = 4;
 			burger=false;
@@ -749,7 +771,7 @@ public class Main extends PApplet {
 		}
 		
 		// longout
-				if(mouseX>= 0 && mouseX<= 243 && mouseY >= 440 && mouseY <= 505 && burger==true){
+		else if(mouseX>= 0 && mouseX<= 243 && mouseY >= 440 && mouseY <= 505 && burger==true){
 					
 					pantalla = 0;
 					burger=false;
@@ -758,7 +780,7 @@ public class Main extends PApplet {
 				}
 				
 			// model3
-			if(mouseX>= 20 && mouseX<= 180 && mouseY >= 322 && mouseY <= 485 && pantalla==2){
+			else if(mouseX>= 20 && mouseX<= 180 && mouseY >= 322 && mouseY <= 485 && pantalla==2){
 					
 				pantalla = 5;
 				modeloElegido = 1;
@@ -768,15 +790,14 @@ public class Main extends PApplet {
 			// burger model 3
 			
 				//abrir menu burger
-				if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==5){
+			else if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==5){
 							
 				burger=!burger;	
 				
 				}
 	
 			// models
-			
-			if(mouseX>= 190 && mouseX<= 346 && mouseY >= 322 && mouseY <= 485 && pantalla==2){
+			else if(mouseX>= 190 && mouseX<= 346 && mouseY >= 322 && mouseY <= 485 && pantalla==2){
 									
 				pantalla = 6;
 				modeloElegido = 2;
@@ -784,7 +805,7 @@ public class Main extends PApplet {
 			
 			//abrir menu burger
 			
-			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==6){
+			else if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==6){
 						
 			burger=!burger;	
 			
@@ -792,21 +813,21 @@ public class Main extends PApplet {
 			
 			// modelx
 			
-			if(mouseX>= 20 && mouseX<= 180 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
+			else if(mouseX>= 20 && mouseX<= 180 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
 								
 			pantalla = 7;	
 			modeloElegido = 3;
 				}
 			
 			//abrir menu burger
-			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==7){
+			else if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==7){
 						
 			burger=!burger;	
 			
 			}
 			// models
 			
-			if(mouseX>= 190 && mouseX<= 346 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
+			else if(mouseX>= 190 && mouseX<= 346 && mouseY >= 495 && mouseY <= 657 && pantalla==2){
 											
 			pantalla = 8;
 			modeloElegido = 4;
@@ -815,7 +836,7 @@ public class Main extends PApplet {
 			
 			//abrir menu burger
 			
-			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==8){
+			else if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==8){
 						
 			burger=!burger;	
 			
@@ -823,14 +844,14 @@ public class Main extends PApplet {
 			
 			// pantalla buy
 			
-			if(mouseX>= 269 && mouseX<= 345 && mouseY >= 624 && mouseY <= 646 &&( pantalla==5 || pantalla==6 || pantalla==7 || pantalla==8))
+			else if(mouseX>= 269 && mouseX<= 345 && mouseY >= 624 && mouseY <= 646 &&( pantalla==5 || pantalla==6 || pantalla==7 || pantalla==8))
 			{
 				pantalla = 9; 
 					
 				}
 			// col negro
 			
-			if(mouseX>= 88 && mouseX<= 120 && mouseY >= 376 && mouseY <= 416 && pantalla==9){
+			else if(mouseX>= 88 && mouseX<= 120 && mouseY >= 376 && mouseY <= 416 && pantalla==9){
 				
 				modelo3.setColor("black");
 				modelos.setColor("black");
@@ -841,7 +862,7 @@ public class Main extends PApplet {
 			
 			//col rojo
 			
-			if(mouseX>= 135 && mouseX<= 380 && mouseY >= 379 && mouseY <= 416 && pantalla==9){
+			else if(mouseX>= 135 && mouseX<= 173 && mouseY >= 379 && mouseY <= 416 && pantalla==9){
 				
 				modelo3.setColor("red");
 				modelos.setColor("red");
@@ -851,7 +872,7 @@ public class Main extends PApplet {
 			
 			//col azul
 			
-			if(mouseX>= 189 && mouseX<= 380 && mouseY >= 218 && mouseY <= 416 && pantalla==9){
+			else if(mouseX>= 183 && mouseX<= 221 && mouseY >= 379 && mouseY <= 416 && pantalla==9){
 				
 				modelo3.setColor("blue");
 				modelos.setColor("blue");
@@ -861,7 +882,7 @@ public class Main extends PApplet {
 				}
 			//col blanco
 			
-			if(mouseX>= 236 && mouseX<= 268 && mouseY >= 379 && mouseY <= 416 && pantalla==9){
+			else if(mouseX>= 229 && mouseX<= 271 && mouseY >= 379 && mouseY <= 416 && pantalla==9){
 				
 				modelo3.setColor("white");
 				modelos.setColor("white");
@@ -874,14 +895,14 @@ public class Main extends PApplet {
 			// burger pantalla 9 
 			
 			//abrir menu burger
-			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==9){
+			else if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==9){
 				
 				burger=!burger;	
 			}
 		
 			// boton pantalla 9 añadir unidades 
 			
-			if(mouseX>= 238 && mouseX<= 251 && mouseY >= 496 && mouseY <= 504 && pantalla==9){
+			else if(mouseX>= 238 && mouseX<= 251 && mouseY >= 496 && mouseY <= 504 && pantalla==9){
 					
 				CantCarros++;
 			
@@ -889,7 +910,7 @@ public class Main extends PApplet {
 			
 			// boton pantalla 9 quitar unidades 
 			
-			if(mouseX>= 105 && mouseX<= 118 && mouseY >= 498 && mouseY <= 506 && pantalla==9){
+			else if(mouseX>= 105 && mouseX<= 118 && mouseY >= 498 && mouseY <= 506 && pantalla==9){
 							
 				if(CantCarros>1) {
 					
@@ -900,14 +921,14 @@ public class Main extends PApplet {
 			
 			// boton continuar pantalla 9 a 10
 			
-			if(mouseX>= 90 && mouseX<= 264  && mouseY >= 578 && mouseY <= 626 && pantalla==9){
+			else if(mouseX>= 90 && mouseX<= 264  && mouseY >= 578 && mouseY <= 626 && pantalla==9){
 													
 					pantalla=10;
 					showCheckout();
 				}
 			
 			// burger pantalla 10
-			if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==10){
+			else if(mouseX>= 17 && mouseX<= 40 && mouseY >= 52 && mouseY <= 68 && pantalla==10){
 				
 				burger=!burger;
 				if (burger == true) {
@@ -917,24 +938,27 @@ public class Main extends PApplet {
 				}
 			}
 			
-			if(mouseX>= 102 && mouseX<= 284 && mouseY >= 578 && mouseY <= 622 && pantalla==10) {
+			else if(mouseX>= 102 && mouseX<= 284 && mouseY >= 578 && mouseY <= 622 && pantalla==10) {
+				pantalla= 3;
+				hideCheckout();
 				
-				pantalla=11;
 				
-			if(modeloElegido == 1) {
-				Compras.add("Modelo 3, Cantidad: "+CantCarros+"  Valor Total:"+modelo3.getPrecio()*CantCarros);
-			}
-			if(modeloElegido == 2) {
-				Compras.add("Modelo S, Cantidad: "+CantCarros+"  Valor Total:"+modelos.getPrecio()*CantCarros);
-			}
-			if(modeloElegido == 3) {
-				Compras.add("Modelo Y, Cantidad: "+CantCarros+"  Valor Total:"+modeloy.getPrecio()*CantCarros);
-			}
-			if(modeloElegido == 4) {
-				Compras.add("Modelo X, Cantidad: "+CantCarros+"  Valor Total:"+modelox.getPrecio()*CantCarros);
+				if(modeloElegido == 1) {
+					Compras.add("Modelo 3, Cantidad: "+CantCarros+"  Valor Total: "+modelo3.getPrecio()*CantCarros);
+				}
+				if(modeloElegido == 2) {
+					Compras.add("Modelo S, Cantidad: "+CantCarros+"  Valor Total: "+modelos.getPrecio()*CantCarros);
+				}
+				if(modeloElegido == 3) {
+					Compras.add("Modelo Y, Cantidad: "+CantCarros+"  Valor Total: "+modeloy.getPrecio()*CantCarros);
+				}
+				if(modeloElegido == 4) {
+					Compras.add("Modelo X, Cantidad: "+CantCarros+"  Valor Total: "+modelox.getPrecio()*CantCarros);
+				}
 			}
 			
-			}			
+			
+						
 			
 			
 	}// cierra mousepressed
